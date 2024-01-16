@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Drink App v1.0</title>
+    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="style vor.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="vor.html">Verdad o Reto</a>
+            <a href="qda.html">Quién de Aquí</a>
+            <a href="ynn.html">Yo Nunca Nunca</a>
+            <a href="hot.html">Hacer o Tomar</a>
+        </nav>
+        <section class="textos-header">
+            <h1>
+                VERDAD O RETO
+            </h1>
+        </section>
+    </header>
+    <div class="button-section">
+        <button id="boton1" class="button1"></button>
+        <button id="boton2" class="button3"></button>
+        <button id="reiniciar" class="button2"></button>
+        <div class="image-container">
+            <img src="ruta/de/tu/hacer.png" alt="">
+        </div>
+    </div>
+    <div id="mySection" style="display: none;">
+        <h2 id="frase"></h2>
+        <button id="closeButton">CERRAR</button>
+    </div>
+
+    <div id="mySection2" style="display: none;">
+        <h2 id="frase1"></h2>
+        <button id="closeButton2">CERRAR</button>
+    </div>
+
+    <script>
+        let frases1 = ["Responde: ¿Cuál es tu fantasía más salvaje? Si no toma 3 shots",
+            "Responde: ¿Alguna vez has fingido un orgasmo? Si no toma 2 shots",
+            "Responde: ¿Cuál es tu posición sexual favorita? Si no toma 2 shots",
+            "Responde: ¿Cuál es la cosa más atrevida que has hecho en público? Si no toma 1 shots",
+            "Responde: ¿Con quién tuviste tu mejor experiencia sexual? Si no toma 3 shots",
+            "Responde: ¿Alguna vez has utilizado juguetes sexuales? Si no toma 2 shots",
+            "Responde: ¿Cuál es tu parte del cuerpo favorita para que te acaricien? Si no toma 2 shots",
+            "Responde: ¿Prefieres el sexo suave o salvaje? Si no toma 1 shots",
+            "Responde: ¿Tienes alguna fantasía que aún no hayas cumplido? Si no toma 2 shots",
+            "Responde: ¿Cuál es tu lugar favorito para tener relaciones sexuales? Si no toma 2 shots",
+            "Responde: ¿Has tenido alguna experiencia con personas del mismo sexo? Si no toma 2 shots",
+            "Responde: ¿Cuál es tu secreto más oscuro en el dormitorio? Si no toma 3 shots",
+            "Responde: ¿Alguna vez has tenido un encuentro de una noche? Si no toma 3 shots",
+            "Responde: ¿Cuál es tu opinión sobre el sexo casual? Si no toma 2 shots",
+            "Responde: ¿Prefieres las luces encendidas o apagadas durante el sexo? Si no toma 1 shots",
+            "Responde: ¿Cuál es tu película o libro erótico favorito? Si no toma 3 shots",
+            "Responde: ¿Alguna vez has enviado fotos íntimas a alguien? Si no toma 1 shots",
+            "Responde: ¿Qué es lo más atrevido que te gustaría probar en la cama? Si no toma 1 shots",
+            "Responde: ¿Cuál es tu lugar público favorito para coquetear? Si no toma 3 shots",
+            "Responde: ¿Has tenido alguna vez un sueño erótico sobre alguien de este grupo? Si no toma 3 shots",
+            "Responde: ¿Cuál es tu mayor fantasía no sexual? Si no toma 1 shots",
+            "Responde: ¿Prefieres ser dominante o sumiso en la cama? Si no toma 2 shots",
+            "Responde: ¿Alguna vez has experimentado con juegos de roles en el dormitorio? Si no toma 2 shots",
+            "Responde: ¿Qué es lo más extraño que te ha excitado? Si no toma 2 shots",
+            "Responde: ¿Qué es lo que más te atrae de alguien en términos de apariencia? Si no toma 2 shots",
+            "Responde: ¿Alguna vez has practicado sexo en un lugar riesgoso? Si no toma 3 shots",
+            "Responde: ¿Te gustaría probar el sexo en trío? Si no toma 3 shots",
+            "Responde: ¿Cuál es tu posición menos favorita? Si no toma 1 shots",
+            "Responde: ¿Cuál es tu mayor miedo sexual? Si no toma 3 shots",
+            "Responde: ¿Alguna vez has tenido un enamoramiento con alguien prohibido? Si no toma 2 shots",
+            "Responde: ¿Qué es lo que más te gusta que te hagan durante el sexo oral? Si no toma 1 shots",
+            "Responde: ¿Prefieres tener relaciones sexuales en la mañana o en la noche? Si no toma 3 shots",
+            "Responde: ¿Cuál es tu límite en términos de experimentación sexual? Si no toma 3 shots",
+            "Responde: ¿Alguna vez has tenido una cita a ciegas con fines sexuales? Si no toma 3 shots",
+            "Responde: ¿Cuál es tu juguete sexual favorito? Si no toma 3 shots",
+            "Responde: ¿Cuántas parejas sexuales has tenido en el último año? Si no toma 3 shots",
+            "Responde: ¿Con quién tendrías sexo salvaje? Si no toma 1 shots",
+            "Responde: Si tuvieras novia, ¿Con quién le serías infiel? Si no toma 1 shots",
+            "Responde: ¿Cuál es tu fantasía más rara? Si no toma 1 shots",
+            "Responde: ¿Con quién cumplirías tu fantasia más salvaje? Si no toma 1 shots",
+            "Responde: ¿Con qué profesor te meterías para pasar una materia? Si no toma 1 shots",
+            "Responde: ¿Eres más sumiso o dominante en la cama? Si no toma 2 shots",
+            "Responde: ¿Cuál es la cosa más extraña que te exita? Si no toma 2 shots",
+            "Responde: ¿Crees que tu entrepierna es linda? Si no toma 3 shots",
+            "Responde: ¿Con quién harías un trío? Si no toma 2 shots",
+            "Responde: ¿Con quién saldrías solo por plata? Si no toma 2 shots",
+            "Responde: ¿Con quién tendrías una aventura? Si no toma 2 shots",
+            "Responde: ¿Quién ha sido tu mejor polvo? Si no toma 3 shots",
+            "Responde: ¿Quién ha sido tu peor polvo? Si no toma 2 shots",
+            "Responde: Menciona a la persona que tú crees que culea mejor Si no toma 3 shots",
+            "Responde: Menciona a la persona que tú crees que culea peor Si no toma 2 shots",
+            "Responde: ¿Con quién tendrías una relación seria? Y ¿Por qué? Si no toma 1 shots",
+            "Responde: ¿Cuál es tu experiencia sexual más desepcionante? Si no toma 3 shots",
+            "Responde: ¿Cuál es tu gusto culposo? Si no toma 1 shots",
+            "Responde: ¿Con la pareja de quién tendrías sexo? Si no toma 4 shots",
+            "Responde: ¿Cuál ha sido la cosa más toxica que haz hecho? Si no toma 2 shots",
+            "Responde: ¿Qué ha sido lo más gracioso que te ha pasado durante el sexo? Si no toma 1 shots",
+            "Responde: ¿Quién es tu gusto culposo? Si no toma 2 shots",
+            "Responde: ¿Cuál es la persona de la habitación que peor te cae? Si no toma 4 shots",
+            "Responde: ¿Cuál ha sido tu mayor mentira? Si no toma 2 shots",
+            "Responde: ¿Cuando fue la última vez que te masturbaste? Si no toma 2 shots",
+            "Responde: ¿Has tenido sexo pensando en otra persona? (detalles) Si no toma 1 shots",
+            "Responde: ¿Tienes nudes en este momento en tu celular? ¿De quién? Si no toma 1 shots",
+            "Responde: ¿Cuál es el peor rechazo que has tenido en el amor? Si no toma 3 shots",
+            "Responde: ¿Hasta donde llegarías con alguien de tu mismo sexo? Si no toma 4 shots",
+            "Responde: Si tuvieras que escoger entre necrofilia o zoofilia, ¿Cuál escogerías? Si no toma 1 shots",
+            "Responde: Di lo que menos te gusta de una de las 3 personas a tu derecha Si no toma 4 shots",
+            "Responde: Si tuvieras la oportunidad de repetir tu primera vez, ¿Con quién sería? Si no toma 2 shots",
+            "Responde: ¿Cómo fue tu primera vez? (detallando) Si no toma 3 shots",];
+
+        let frases2 = ["Haz un striptease para el grupo. Si no toma 3 shots",
+            "Envía un mensaje picante a alguien en tus contactos. Si no toma 2 shots",
+            "Simula una escena de una película erótica durante dos minutos. Si no toma 2 shots",
+            "Llama a alguien y dile lo atractivo Si no toma 1 shots",
+            "Bésale el cuello a la persona a tu izquierda. Si no toma 3 shots",
+            "Juega una ronda de Besos, Mar, Tierra con un toque sensual. Si no toma 2 shots",
+            "Publica una historia picante en tus redes sociales. Si no toma 2 shots",
+            "En el lugar donde estás, imita cómo te masturbas. Si no toma 1 shots",
+            "Comparte una fantasía sexual que nunca hayas revelado. Si no toma 2 shots",
+            "Haz una imitación sensual de alguien famoso. Si no toma 2 shots",
+            "Desnúdate parcialmente y mantén esa ropa durante dos rondas. Si no toma 2 shots",
+            "Haz una lista de tus posiciones sexuales favoritas y compártela. Si no toma 3 shots",
+            "Realiza una danza erótica para el grupo. Si no toma 3 shots",
+            "Tócale el trasero a la persona a tu derecha. Si no toma 2 shots",
+            "Di en voz alta tu experiencia sexual más vergonzosa. Si no toma 1 shots",
+            "Usa un juguete sexual frente al grupo. Si no toma 3 shots",
+            "Describe tu encuentro sexual más memorable. Si no toma 1 shots",
+            "Besa a la persona que el grupo elija. Si no toma 1 shots",
+            "Comparte una historia divertida sobre una cita a ciegas. Si no toma 3 shots",
+            "Actúa como si estuvieras en una cita a ciegas y seduce al grupo. Si no toma 3 shots",
+            "Comparte tu fantasía sexual más extraña. Si no toma 1 shots",
+            "Haz una representación teatral de una situación sexual incómoda. Si no toma 2 shots",
+            "Comparte una experiencia de una noche que nunca hayas contado. Si no toma 2 shots",
+            "Pide a alguien del grupo que te dé un masaje sensual. Si no toma 2 shots",
+            "Realiza una llamada de sexo telefónico simulada. Si no toma 2 shots",
+            "Cuéntale al grupo sobre tu mayor deseo no cumplido en el dormitorio. Si no toma 3 shots",
+            "Haz una descripción detallada de tu parte del cuerpo favorita. Si no toma 3 shots",
+            "Actúa como si fueras un terapeuta sexual y da consejos al grupo. Si no toma 1 shots",
+            "Usa un juguete sexual en tu próxima interacción íntima. Si no toma 3 shots",
+            "Comparte una fantasía sexual que consideres inusual. Si no toma 2 shots",
+            "Di tres cosas sucias que nunca le dirías a tu pareja. Si no toma 1 shots",
+            "Haz una lista de reproducción sensual y ponla para el grupo. Si no toma 3 shots",
+            "Actúa como si estuvieras en un comercial de condones. Si no toma 3 shots",
+            "Da un masaje erótico a la persona a tu izquierda durante cinco minutos. Si no toma 3 shots",
+            "Publica una foto sugestiva en tus redes sociales. Si no toma 3 shots",
+            "Comparte la experiencia más romántica que hayas tenido. Si no toma 3 shots",
+            "Toca una canción sensual y baila con la persona a tu derecha. Si no toma 1 shots",
+            "Di en voz alta la parte del cuerpo que más te excita. Si no toma 1 shots",
+            "Comparte una historia de una experiencia sexual inesperada. Si no toma 1 shots",
+            "Juega a Yo Nunca Nunca  con preguntas picantes. Si no toma 1 shots",
+            "Comparte la fantasía más salvaje que hayas tenido. Si no toma 1 shots",
+            "Actúa como si estuvieras en una película para adultos durante dos minutos. Si no toma 2 shots",
+            "Haz una representación de una fantasía sexual popular. Si no toma 2 shots",
+            "Di en voz alta la cosa más atrevida que te gustaría hacer. Si no toma 3 shots",
+            "Comparte la experiencia más emocionante que hayas tenido en la cama. Si no toma 2 shots",
+            "Realiza un baile sensual frente al grupo. Si no toma 2 shots",
+            "Comparte un sueño erótico reciente. Si no toma 2 shots",
+            "Haz una llamada de voz sensual a alguien del grupo. Si no toma 3 shots",
+            "Comparte la experiencia más divertida que hayas tenido en el dormitorio. Si no toma 2 shots",
+            "Di en voz alta tu posición sexual menos favorita. Si no toma 3 shots",
+            "Actúa como si estuvieras en un programa de citas eróticas. Si no toma 2 shots",
+            "Comparte una fantasía que te gustaría cumplir en el próximo año. Si no toma 1 shots",
+            "Haz una imitación sexy de alguien del grupo. Si no toma 3 shots",
+            "Di en voz alta algo que siempre quisiste preguntar sobre sexo. Si no toma 1 shots",
+            "Deja que alguien te deje un chupon en el cuello Si no toma 4 shots",
+            "Muerde la nalga de la persona a tu derecha Si no toma 2 shots",
+            "Tómate un shot directamente de la boca de la persona que escoja el grupo Si no toma 1 shots",
+            "Envía un Hola Amor a tu ex o la última persona con quien saliste Si no toma 2 shots",
+            "Imita tu posición sexual favorita con una persona que escoja el grupo (sin hablar) Si no toma 4 shots",
+            "Muerde la nalga de la persona a tu derecha Si no toma 2 shots",
+            "Besa el cuello de la persona a tu izquierda durante 10 seg Si no toma 2 shots",
+            "Besar a la persona que esté a su derecha. Si no toma 1 shots",
+            "Finge un orgasmo Si no toma 1 shots",
+            "Lame la oreja de la persona a tu izquierda Si no toma 3 shots",
+            "Busca el instagram de tu último ex y dale like a su foto más antigua Si no toma 4 shots",
+            "Deja que la persona que está a 3 puestos a tu izquierda revise tu galería por 40seg Si no toma 1 shots",
+            "Di lo que menos te gusta de una de las 3 personas a tu derecha Si no toma 4 shots",
+            "Imita como besas al aire con los ojos cerrados durante 10 segundos Si no toma 2 shots",
+            "Tómate un shot del hombligo de alguien Si no toma 3 shots",];
+        let contador = [1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,];
+        let contador2 = [1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,];
+        let a = 0;
+        let b = 0;
+        let c = 0;
+        let opcion = 1;
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        document.getElementById("boton1").addEventListener("click", function () {
+            let comp = 0;
+            if (b === 0) {
+                let j = 0;
+                j = getRandomInt(69);
+                while (comp === 0) {
+                    if (contador[j] === 0) {
+                        j = getRandomInt(69);
+                        comp = 0;
+                    } else {
+                        document.getElementById("frase").innerText = frases1[j];
+                        contador[j] = 0;
+                        b = 0;
+                        for (let i = 0; i < 69; i++) {
+                            if (contador[i] === 0) {
+                                b = b + 1;
+                            }
+                        }
+                        if (b !== 69) {
+                            b = 0;
+                        } else {
+                            alert("No hay más dale en Reiniciar");
+                            b = 69;
+                        }
+                        comp = 1;
+                    }
+                }
+            } else {
+                alert("No hay más dale en Reiniciar");
+            }
+        });
+
+        document.getElementById("boton2").addEventListener("click", function () {
+            let comp = 0;
+            if (c === 0) {
+                let j = 0;
+                j = getRandomInt(69);
+                while (comp === 0) {
+                    if (contador2[j] === 0) {
+                        j = getRandomInt(69);
+                        comp = 0;
+                    } else {
+                        document.getElementById("frase1").innerText = frases2[j];
+                        contador2[j] = 0;
+                        c = 0;
+                        for (let i = 0; i < 69; i++) {
+                            if (contador2[i] === 0) {
+                                c = c + 1;
+                            }
+                        }
+                        if (c !== 69) {
+                            c = 0;
+                        } else {
+                            alert("No hay más dale en Reiniciar");
+                            c = 69;
+                        }
+                        comp = 1;
+                    }
+                }
+            } else {
+                alert("No hay más dale en Reiniciar");
+            }
+        });
+
+        document.getElementById("reiniciar").addEventListener("click", function () {
+            window.location.reload();
+        });
+
+        document.getElementById("boton1").addEventListener("click", function () {
+            document.getElementById("mySection").style.display = "block";
+        });
+        document.getElementById("closeButton").addEventListener("click", function () {
+            document.getElementById("mySection").style.display = "none";
+        });
+        document.getElementById("boton2").addEventListener("click", function () {
+            document.getElementById("mySection2").style.display = "block";
+        });
+        document.getElementById("closeButton2").addEventListener("click", function () {
+            document.getElementById("mySection2").style.display = "none";
+        });
+    </script>
+</body>
+</html>

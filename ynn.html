@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Drink App v1.0</title>
+    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="style ynn.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="vor.html">Verdad o Reto</a>
+            <a href="qda.html">Quién de Aquí</a>
+            <a href="ynn.html">Yo Nunca Nunca</a>
+            <a href="hot.html">Hacer o Tomar</a>
+        </nav>
+        <section class="textos-header">
+            <h1>
+                YO NUNCA NUNCA
+            </h1>
+        </section>
+    </header>
+    <div class="button-section">
+        <button id="boton1" class="button1"></button>
+        <button id="reiniciar" class="button2"></button>
+        <div class="image-container">
+            <img src="ruta/de/tu/hacer.png" alt="">
+        </div>
+    </div>
+    <div id="mySection" style="display: none;">
+        <h2 id="frase"></h2>
+        <button id="closeButton">CERRAR</button>
+    </div>
+
+    <script>
+        let frases1 = ["Yo nunca nunca he enviado una foto desnudx.",
+            "Yo nunca nunca he tenido una aventura de una noche.",
+            "Yo nunca nunca he tenido un sueño erótico con alguien de este grupo.",
+            "Yo nunca nunca he practicado el sexting.",
+            "Yo nunca nunca he usado juguetes sexuales.",
+            "Yo nunca nunca he tenido sexo en un lugar público.",
+            "Yo nunca nunca he utilizado lubricantes durante el sexo.",
+            "Yo nunca nunca he tenido una fantasía con alguien del mismo sexo.",
+            "Yo nunca nunca he tenido sexo telefónico.",
+            "Yo nunca nunca he fingido un orgasmo.",
+            "Yo nunca nunca he tenido una cita a ciegas con fines sexuales.",
+            "Yo nunca nunca he participado en juegos de roles en la cama.",
+            "Yo nunca nunca he tenido un encuentro con alguien mucho mayor o más joven que yo.",
+            "Yo nunca nunca he practicado sexo con más de una persona al mismo tiempo.",
+            "Yo nunca nunca he tenido un amigo con derechos.",
+            "Yo nunca nunca he usado ropa interior provocativa para una cita.",
+            "Yo nunca nunca he visto pornografía en solitario.",
+            "Yo nunca nunca he tenido sexo durante mi hora de trabajo.",
+            "Yo nunca nunca he utilizado la comida en el juego previo.",
+            "Yo nunca nunca he tenido sexo en una playa.",
+            "Yo nunca nunca he tenido una fantasía con un profesor o jefe.",
+            "Yo nunca nunca he practicado el sexo anal.",
+            "Yo nunca nunca he tenido un encuentro sexual en línea.",
+            "Yo nunca nunca he tenido sexo en un vehículo en movimiento.",
+            "Yo nunca nunca he enviado mensajes de texto a la persona equivocada por error.",
+            "Yo nunca nunca he tenido un enamoramiento con alguien en este círculo.",
+            "Yo nunca nunca he practicado el BDSM.",
+            "Yo nunca nunca he tenido una noche de citas por video.",
+            "Yo nunca nunca he utilizado ropa interior comestible.",
+            "Yo nunca nunca he tenido una fantasía con un personaje famoso.",
+            "Yo nunca nunca he tenido una experiencia sexual en tres o más posiciones diferentes.",
+            "Yo nunca nunca he participado en juegos sexuales con dados o cartas.",
+            "Yo nunca nunca he tenido una fantasía con un compañero de trabajo.",
+            "Yo nunca nunca he tenido sexo en la ducha.",
+            "Yo nunca nunca he grabado un video íntimo.",
+            "Yo nunca nunca he tenido una fantasía con un amigo cercano.",
+            "Yo nunca nunca he tenido sexo durante la menstruación.",
+            "Yo nunca nunca he utilizado un disfraz erótico.",
+            "Yo nunca nunca he tenido una fantasía con un desconocido.",
+            "Yo nunca nunca he tenido sexo en la casa de un amigo.",
+            "Yo nunca nunca he usado una aplicación para encuentros casuales.",
+            "Yo nunca nunca he tenido una experiencia sexual al aire libre.",
+            "Yo nunca nunca he practicado el sexo tántrico.",
+            "Yo nunca nunca he tenido una fantasía con un profesor.",
+            "Yo nunca nunca he tenido sexo en un lugar de trabajo.",
+            "Yo nunca nunca he tenido una fantasía con un vecino.",
+            "Yo nunca nunca he tenido sexo en un avión.",
+            "Yo nunca nunca he tenido una fantasía con un compañero de clase.",
+            "Yo nunca nunca he tenido una experiencia sexual en un jacuzzi o piscina.",
+            "Yo nunca nunca he tenido sexo en una fiesta.",
+            "Yo nunca nunca he tenido una fantasía con una celebridad.",
+            "Yo nunca nunca he tenido sexo en una bañera de hidromasaje.",
+            "Yo nunca nunca he tenido una fantasía con un ex.",
+            "Yo nunca nunca he tenido sexo en la playa.",
+            "Yo nunca nunca he tenido una experiencia sexual en un hotel.",
+            "Yo nunca nunca he tenido una fantasía con un desconocido en un lugar público.",
+            "Yo nunca nunca he tenido sexo en una escalera.",
+            "Yo nunca nunca he tenido una fantasía con un amigo cercano.",
+            "Yo nunca nunca he tenido sexo en la cocina.",
+            "Yo nunca nunca he tenido una fantasía con un extraño.",
+            "Yo nunca nunca he tenido sexo en la terraza o balcón.",
+            "Yo nunca nunca he tenido una fantasía con un amigo del mismo sexo.",
+            "Yo nunca nunca he tenido sexo en una tienda de campaña.",
+            "Yo nunca nunca he tenido una fantasía con alguien del trabajo.",
+            "Yo nunca nunca he tenido sexo en un bosque.",
+            "Yo nunca nunca he tenido una fantasía con alguien del mismo género.",
+            "Yo nunca nunca he tenido sexo en una piscina.",
+            "Yo nunca nunca he tenido una fantasía con una celebridad.",
+            "Yo nunca nunca he tenido sexo en una habitación de hotel.",
+            "Yo nunca nunca he tenido una fantasía con un desconocido en una fiesta.",
+            "Yo nunca nunca he tenido sexo en una ducha.",
+            "Yo nunca nunca he tenido una fantasía con un profesor o jefe.",
+            "Yo nunca nunca he tenido sexo en un automóvil.",
+            "Yo nunca nunca he tenido una fantasía con un amigo cercano.",
+            "Yo nunca nunca he tenido sexo en una playa.",
+            "Yo nunca nunca he tenido una fantasía con alguien del mismo género.",
+            "Yo nunca nunca he tenido sexo en una bañera.",
+            "Yo nunca nunca he tenido una fantasía con un compañero de trabajo.",
+            "Yo nunca nunca he tenido sexo en una piscina.",
+            "Yo nunca nunca he tenido una fantasía con un desconocido.",
+            "Yo nunca nunca he tenido sexo en la playa.",
+            "Yo nunca nunca he tenido una fantasía con un profesor o jefe.",
+            "Yo nunca nunca he tenido sexo en una escalera.",
+            "Yo nunca nunca he tenido una fantasía con alguien del mismo género.",
+            "Yo nunca nunca he tenido sexo en una ducha.",
+            "Yo nunca nunca he tenido una fantasía con un amigo cercano.",
+            "Yo nunca nunca he tenido sexo en una terraza o balcón.",
+            "Yo nunca nunca he tenido una fantasía con un compañero de trabajo.",
+            "Yo nunca nunca he tenido sexo en una tienda de campaña.",
+            "Yo nunca nunca he tenido una fantasía con alguien del mismo género.",
+            "Yo nunca nunca he tenido sexo en una piscina.",
+            "Yo nunca nunca he tenido una fantasía con un desconocido en una fiesta.",
+            "Yo nunca nunca he tenido sexo en una ducha.",
+            "Yo nunca nunca he tenido una fantasía con un profesor o jefe.",
+            "Yo nunca nunca he tenido sexo en una playa.",
+            "Yo nunca nunca he tenido una fantasía con alguien del mismo género.",
+            "Yo nunca nunca he tenido sexo en una escalera.",
+            "Yo nunca nunca he tenido una fantasía con un amigo cercano.",
+            "Yo nunca nunca he tenido sexo en una piscina.",
+            "Yo nunca nunca he tenido una fantasía con un compañero de trabajo."];
+
+        let contador = [1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1];
+        let a = 0;
+        let b = 0;
+        let opcion = 1;
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        document.getElementById("boton1").addEventListener("click", function () {
+            let comp = 0;
+            if (b === 0) {
+                let j = 0;
+                j = getRandomInt(100);
+                while (comp === 0) {
+                    if (contador[j] === 0) {
+                        j = getRandomInt(100);
+                        comp = 0;
+                    } else {
+                        document.getElementById("frase").innerText = frases1[j];
+                        contador[j] = 0;
+                        b = 0;
+                        for (let i = 0; i < 100; i++) {
+                            if (contador[i] === 0) {
+                                b = b + 1;
+                            }
+                        }
+                        if (b !== 100) {
+                            b = 0;
+                        } else {
+                            alert("No hay más dale en Reiniciar");
+                            b = 100;
+                        }
+                        comp = 1;
+                    }
+                }
+            } else {
+                alert("No hay más dale en Reiniciar");
+            }
+        });
+
+
+        document.getElementById("reiniciar").addEventListener("click", function () {
+            window.location.reload();
+        });
+
+        document.getElementById("boton1").addEventListener("click", function () {
+            document.getElementById("mySection").style.display = "block";
+        });
+        document.getElementById("closeButton").addEventListener("click", function () {
+            document.getElementById("mySection").style.display = "none";
+        });
+    </script>
+</body>
+</html>

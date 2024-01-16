@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Drink App v1.0</title>
+    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="style qda.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="vor.html">Verdad o Reto</a>
+            <a href="qda.html">Quién de Aquí</a>
+            <a href="ynn.html">Yo Nunca Nunca</a>
+            <a href="hot.html">Hacer o Tomar</a>
+        </nav>
+        <section class="textos-header">
+            <h1>
+                QUIÉN DE AQUÍ
+            </h1>
+        </section>
+    </header>
+    <div class="button-section">
+        <button id="boton1" class="button1"></button>
+        <button id="reiniciar" class="button2"></button>
+        <div class="image-container">
+            <img src="ruta/de/tu/hacer.png" alt="">
+        </div>
+    </div>
+    <div id="mySection" style="display: none;">
+        <h2 id="frase"></h2>
+        <button id="closeButton">CERRAR</button>
+    </div>
+
+
+    <script>
+        let frases1 = ["¿Quién en este grupo crees que tiene el historial amoroso más complicado? O toma 1 shots",
+            "¿A quién consideras el más coqueto del grupo? O toma 2 shots",
+            "¿Quién crees que tiene más secretos oscuros? O toma 1 shots",
+            "¿Quién en este grupo sería el peor en la cama? O toma 4 shots",
+            "¿Quién crees que ha tenido más parejas sexuales en el último año? O toma 2 shots",
+            "¿Quién en este grupo te parece que está ocultando algo importante? O toma 2 shots",
+            "¿Quién crees que es más mentiroso? O toma 4 shots",
+            "¿A quién en este grupo le has contado tus problemas amorosos? O toma 1 shots",
+            "¿Quién crees que dejaría embarazada a alguien primero O toma 2 shots",
+            "¿Quién crees que ha roto más corazones? O toma 2 shots",
+            "¿A quién crees que ha perdonado una infidelidad? O toma 1 shots",
+            "¿Quién crees que ha mentido sobre su número de parejas anteriores? O toma 3 shots",
+            "¿A quién en este grupo le has dicho que no te gusta cuando en realidad sí? O toma 4 shots",
+            "¿Quién crees que haría cualquier cosa por dinero? O toma 3 shots",
+            "¿Quién crees que ha tenido más fracasos amorosos? O toma 1 shots",
+            "¿Con quién en este grupo cumplirías tus fantasías más oscuras? O toma 4 shots",
+            "¿Quién crees que ha engañado a su pareja actual? O toma 2 shots",
+            "¿Con quién te gustaría probar cosas nuevas en la intimidad? O toma 4 shots",
+            "¿Quién crees que se enamoraría más rápido de otra persona del grupo? O toma 1 shots",
+            "¿A quién creesque le gustaría tener una noche romántica con (Nombre)? O toma 2 shots",
+            "¿Quién crees que ha sido más infiel en el pasado? O toma 1 shots",
+            "¿Quién crees que se pueda perder en las drogas o alcohol? O toma 1 shots",
+            "¿A quién crees le gustaría tener una aventura con (Nombre)? O toma 2 shots",
+            "¿Quién crees que tiene las fantasías más raras? O toma 1 shots",
+            "¿Quién crees que ha herido más a sus parejas emocionalmente? O toma 1 shots",
+            "¿Quién crees que ha roto más corazones sin remordimientos? O toma 2 shots",
+            "¿Quién crees que ha engañado a su pareja actual más de una vez? O toma 2 shots",
+            "¿Quién es más propenso a tener una relación abierta? O toma 2 shots",
+            "¿Quién crees que ha herido a otras personas solo por diversión? O toma 3 shots",
+            "¿Quién crees que ha utilizado a otras personas solo por interés? O toma 2 shots",
+            "¿Quién crees que ha mantenido relaciones íntimas con personas del mismo sexo? O toma 1 shots",
+            "¿Quién crees que ha salido con alguien solo por su físico? O toma 3 shots",
+            "¿Quién crees que ha dejado a alguien por otra persona? O toma 2 shots",
+            "¿Quién crees que es más salvaje en el sexo? O toma 4 shots",
+            "¿Quién crees que es más propenso a ocultar su relación para tener una aventura? O toma 3 shots",
+            "¿Quién crees que ha tenido más experiencias sexuales vergonzosas? O toma 1 shots",
+            "¿Quién crees que ha utilizado su atractivo físico para conseguir lo que quiere? O toma 3 shots",
+            "¿Quién crees que ha compartido más nudes? O toma 3 shots",
+            "¿Quién crees que ha tenido una aventura amorosa con alguien más del grupo? O toma 2 shots",
+            "¿Quién crees que ha sido infiel y nunca lo ha admitido? O toma 1 shots",
+            "¿Quién crees que ha usado a alguien solo por venganza? O toma 2 shots",
+            "¿Quién crees que ha sido la causa de más rupturas en relaciones ajenas? O toma 4 shots",
+            "¿Quién crees que ha utilizado su atractivo físico para manipular a otras personas? O toma 4 shots",
+            "¿Quién crees que ha salido con alguien solo por venganza? O toma 2 shots",
+            "¿Quién crees que ha usado a alguien solo por diversión? O toma 3 shots",
+            "¿Quién crees que ha compartido secretos íntimos de otras personas para obtener beneficios? O toma 2 shots",
+            "¿Quién en este grupo crees que ha tenido más parejas sexuales? O toma 2 shots",
+            "¿Quién en este grupo crees que sería el más loco en una relación? O toma 1 shots",
+            "¿Quién en este grupo crees que ha ocultado una relación amorosa a propósito? O toma 3 shots",
+            "¿Quién crees que ha causado más problemas en relaciones ajenas? O toma 2 shots",
+            "¿Quién crees que tienen las fantasías más salvajes en la intimidad? O toma 3 shots",
+            "¿Quién crees que ha sido infiel y nunca ha sido descubierto? O toma 2 shots",
+            "¿Quién crees quepodría utilizar su atractivo físico para obtener ventajas en la U? O toma 3 shots",
+            "¿Quién crees que pueda ser la mejor experiencia sexual que tendrías? O toma 4 shots",
+            "¿Quién crees que ha tenido más encuentros de una noche? O toma 3 shots",
+            "¿Quién crees que haya tenido un sueño erótico sobre alguien de este grupo? O toma 2 shots",
+            "¿Quién crees que es más dominante en la cama? O toma 2 shots",
+            "¿Quién crees que es más sumiso en la cama? O toma 2 shots",
+            "¿Quién crees que tiene los pechos más lindos? O toma 4 shots",
+            "¿Quién crees que se exita con cosas extrañas? O toma 1 shots",
+            "¿Quién crees que tiene un pene lindo? O toma 4 shots",
+            "¿Quién crees que tiene una vagina linda? O toma 4 shots",
+            "¿Quién crees que ha hecho un trío? O toma 1 shots",
+            "¿Quién crees que tiene una vagina fea? O toma 4 shots",
+            "¿Quién es más propenso a enamorarse de un profesor? O toma 2 shots",
+            "¿Quién es más propenso a enamorarse de alguien prohibido? O toma 2 shots",
+            "¿Quién crees que tiene un pene feo? O toma 4 shots",
+            "¿Quién crees que ya le han metido un dedo en el culo? O toma 2 shots",
+            "¿Quién crees que ha salido con alguien solo por interés económico? O toma 3 shots",
+            "¿Quién crees le gustaría tener una noche de pasión con (Nombre)? O toma 4 shots",
+            "¿Quién crees que ha tenido más desamores sin aprender nada? O toma 1 shots",
+            "¿Quién crees que puede engañar a su pareja actual sin sentir remordimientos? O toma 2 shots",
+            "¿Quién crees que ha salido con alguien solo por experimentar? O toma 2 shots",
+            "¿Quién crees que ha usado a alguien solo por capricho? O toma 1 shots",
+            "¿Quién crees que ha sido infiel más de una vez y nunca ha sido descubierto? O toma 2 shots",
+            "¿Con qué dos personas harías un trío? O toma 4 shots",
+            "¿Quién crees que es mejor dando sexo oral? O toma 4 shots",
+            "¿Con la pareja de quién tendrías sexo? O toma 4 shots",
+            "¿Quién crees que gima más duro en la cama? O toma 4 shots",
+            "¿Quién crees que sea eyaculador precoz? O toma 4 shots",
+            "¿Quién crees que besa mejor? O toma 1 shots",
+            "¿Quién es más probable de que se contagie de una ETS? O toma 2 shots",
+            "¿Quién se metería con alguien casado? O toma 4 shots",
+            "¿Quién crees que le gustaria una Golden Shower? O toma 4 shots",
+            "¿Con quién te gustaría tener una amistad con beneficios? O toma 1 shots",
+            "¿Cuál es la persona de la habitación que peor te cae? O toma 4 shots",
+            "¿Cuál es la persona de la habitación que mejor te cae? O toma 1 shots",
+            "¿Quién crees que tiene el ano más peludo? O toma 4 shots",
+            "¿Quién crees que te sabría tocar mejor? O toma 4 shots",
+            "¿Quién crees que ha tenido el peor gusto en parejas? O toma 3 shots",
+            "¿Quién tiene las mejores nalgas de los presentes? O toma 4 shots",
+            "¿Quién crees que tiene los pezones más lindos? O toma 3 shots"];
+
+        let contador = [1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1];
+        let a = 0;
+        let b = 0;
+        let opcion = 1;
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        document.getElementById("boton1").addEventListener("click", function () {
+            let comp = 0;
+            if (b === 0) {
+                let j = 0;
+                j = getRandomInt(93);
+                while (comp === 0) {
+                    if (contador[j] === 0) {
+                        j = getRandomInt(93);
+                        comp = 0;
+                    } else {
+                        document.getElementById("frase").innerText = frases1[j];
+                        contador[j] = 0;
+                        b = 0;
+                        for (let i = 0; i < 93; i++) {
+                            if (contador[i] === 0) {
+                                b = b + 1;
+                            }
+                        }
+                        if (b !== 93) {
+                            b = 0;
+                        } else {
+                            alert("No hay más dale en Reiniciar");
+                            b = 93;
+                        }
+                        comp = 1;
+                    }
+                }
+            } else {
+                alert("No hay más dale en Reiniciar");
+            }
+        });
+
+
+        document.getElementById("reiniciar").addEventListener("click", function () {
+            window.location.reload();
+        });
+
+        document.getElementById("boton1").addEventListener("click", function () {
+            document.getElementById("mySection").style.display = "block";
+        });
+        document.getElementById("closeButton").addEventListener("click", function () {
+            document.getElementById("mySection").style.display = "none";
+        });
+    </script>
+</body>
+</html>
