@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="us-ascii">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Inicio de sesion</title>
+    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
+    <link href="style usuario.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="formulario">
+        <h1>Inicio de sesión</h1>
+        <form method="post" id="login-form">
+            <div class="username">
+                <input type="text" id="username" required />
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="password">
+                <input type="password" id="password" required />
+                <label>Contraseña</label>
+            </div>
+            <input type="submit" value="Iniciar" />
+            <div class="a">
+                a
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('login-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                if (username === 'admin' && password === '1234') {
+                    window.location.href = 'juegos.html';
+                } else {
+                    alert('Usuario o contraseña incorrecta');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
