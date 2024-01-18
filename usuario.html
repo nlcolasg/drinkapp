@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="formulario">
-        <h1>Inicio de sesión</h1>
+        <h1>Inicio de sesi?n</h1>
         <form method="post" id="login-form">
             <div class="username">
                 <input type="text" id="username" required />
@@ -17,7 +17,11 @@
             </div>
             <div class="password">
                 <input type="password" id="password" required />
-                <label>Contraseña</label>
+                <label>Contrase?a</label>
+            </div>
+            <div class="recordar">
+                <input type="checkbox" id="recordar-password" />
+                <label>Recordar contrase?a</label>
             </div>
             <input type="submit" value="Iniciar" />
             <div class="a">
@@ -27,16 +31,27 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            var password = localStorage.getItem('password');
+            if (password) {
+                document.getElementById('password').value = password;
+            }
+
             document.getElementById('login-form').addEventListener('submit', function (event) {
                 event.preventDefault();
 
                 var username = document.getElementById('username').value;
                 var password = document.getElementById('password').value;
+                var recordarPassword = document.getElementById('recordar-password').checked;
 
                 if (username === 'admin' && password === 'Nicolas1025!') {
+                    if (recordarPassword) {
+                        localStorage.setItem('password', password);
+                    } else {
+                        localStorage.removeItem('password');
+                    }
                     window.location.href = 'juegos.html';
                 } else {
-                    alert('Usuario o contraseña incorrecta');
+                    alert('Usuario o contrase?a incorrecta');
                 }
             });
         });
