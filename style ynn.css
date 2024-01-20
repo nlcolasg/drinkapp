@@ -30,57 +30,64 @@ nav {
     padding: 30px 0 0 0;
     display: flex;
     justify-content: center;
-    overflow:hidden;
+    overflow: hidden;
     align-items: center;
 }
-nav .inicio, .hot, .vor, .ynn, .qda {
-    font-size: 25px;
-    color: black;
-    font-weight: 600;
-    text-decoration: none;
-    margin-right: 10px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-nav .inicio > a, .hot > a, .vor > a, .ynn > a, .qda  > a {
-    font-size: 25px;
-    color: black;
-    font-weight: 600;
-    text-decoration: none;
-    display: block;
-}
 
-nav .inicio > a:hover, .hot > a:hover, .vor > a:hover, .ynn > a:hover, .qda  > a:hover {
-    text-decoration: underline;
-}
+    nav .inicio, .hot, .vor, .ynn, .qda {
+        font-size: 25px;
+        color: black;
+        font-weight: 600;
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+        nav .inicio > a, .hot > a, .vor > a, .ynn > a, .qda > a {
+            font-size: 25px;
+            color: black;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+
+            nav .inicio > a:hover, .hot > a:hover, .vor > a:hover, .ynn > a:hover, .qda > a:hover {
+                text-decoration: underline;
+            }
 
 .inicio {
     background: hsla(317,45%,52%,0.9);
     background: -webkit-linear-gradient(to right, hsla(340,95%,50%,0.4), hsla(317,45%,52%,0.4));
     background: linear-gradient(to right, hsla(340,95%,50%,0.4), hsla(317,45%,52%,0.4));
 }
+
 .vor {
     background: hsla(60, 100%, 50%, 0.9);
     background: -webkit-linear-gradient(to right, hsla(25, 100%, 50%, 0.7), hsla(60, 100%, 50%, 0.7));
     background: linear-gradient(to right, hsla(25, 100%, 50%, 0.7), hsla(60, 100%, 50%, 0.7));
 }
+
 .ynn {
     background: hsla(303, 100%, 50%, 0.9);
     background: -webkit-linear-gradient(to right, hsla(303, 100%, 50%, 0.7), hsla(303, 100%, 100%, 0.7));
     background: linear-gradient(to right, hsla(303, 100%, 50%, 0.7), hsla(303, 100%, 100%, 0.7));
 }
+
 .qda {
     background: hsla(60, 100%, 50%, 0.9);
     background: -webkit-linear-gradient(to right, hsla(356, 100%, 50%, 0.7), hsla(119, 100%, 50%, 0.7));
     background: linear-gradient(to right, hsla(356, 100%, 50%, 0.7), hsla(119, 100%, 50%, 0.7));
 }
+
 .hot {
     background: hsla(240, 100%, 50%, 0.9);
     background: -webkit-linear-gradient(to right, hsla(240, 100%, 50%, 0.7), hsla(60, 100%, 50%, 0.7));
     background: linear-gradient(to right, hsla(240, 100%, 50%, 0.7), hsla(60, 100%, 50%, 0.7));
 }
+
 
 header .textos-header {
     display: flex;
@@ -213,7 +220,6 @@ header {
     border: 1px solid black; /* Add this line to create a black border */
 }
 
-
 @media screen and (max-width:900px) {
     nav .inicio, .hot, .vor, .qda, .ynn {
         width: 50%;
@@ -231,7 +237,6 @@ header {
 
     .button-section {
         background-size: cover;
-        flex-direction:column;
     }
 
     .textos-header h1 {
@@ -281,7 +286,7 @@ header {
 
     .button-section {
         background-size: cover;
-        flex-direction:column;
+        flex-direction: column;
     }
 
     .textos-header h1 {
@@ -316,7 +321,7 @@ header {
 
 @media screen and (max-width:500px) {
 
-   nav {
+    nav {
         padding: 20px 0 0 0;
     }
 
@@ -341,7 +346,7 @@ header {
 
     .button-section {
         background-size: cover;
-        flex-direction:column;
+        flex-direction: column;
     }
 
     .button1 {
