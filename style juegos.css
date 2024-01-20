@@ -76,6 +76,15 @@ header .textos-header {
 
 @media screen and (max-width:500px) {
     .textos-header h1 {
+        nav {
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+        nav > a {
+            margin-right: 5px;
+        }
+
         font-size: 20px;
         margin-left: 5px;
     }
