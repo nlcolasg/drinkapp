@@ -277,7 +277,6 @@ header {
     nav .inicio, .hot, .vor, .qda, .ynn {
         width: 50%;
         text-align: center;
-        display:block;
     }
 
         nav .inicio > a, .hot > a, .vor > a, .qda > a, .ynn > a {
@@ -291,6 +290,7 @@ header {
 
     .button-section {
         background-size: cover;
+        flex-direction: column;
     }
 
     .textos-header h1 {
@@ -345,7 +345,6 @@ header {
     nav .inicio, .hot, .vor, .qda, .ynn {
         width: 50%;
         text-align: center;
-        display:block;
     }
 
         nav .inicio > a, .hot > a, .vor > a, .qda > a, .ynn > a {
@@ -359,12 +358,12 @@ header {
 
     .button-section {
         background-size: cover;
+        flex-direction: column;
     }
 
     .textos-header h1 {
         font-size: 50px;
     }
-
 
     .button1 {
         background-size: 150px 150px;
@@ -415,7 +414,6 @@ header {
     nav .inicio, .hot, .vor, .qda, .ynn {
         width: 50%;
         text-align: center;
-        display:block;
     }
 
         nav .inicio > a, .hot > a, .vor > a, .qda > a, .ynn > a {
@@ -433,6 +431,7 @@ header {
 
     .button-section {
         background-size: cover;
+        flex-direction: column;
     }
 
     .button1 {
