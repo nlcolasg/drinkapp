@@ -44,7 +44,7 @@ header .textos-header {
     font-size: 50px;
     color: black;
 }
-/* Estilos básicos para la sección */
+/* Estilos bÃ¡sicos para la secciÃ³n */
 .juegos {
     display: flex;
     justify-content: center;
@@ -54,22 +54,29 @@ header .textos-header {
     box-sizing: border-box;
 }
 
-/* Estilos para la galería de imágenes */
+/* Estilos para la galerÃ­a de imÃ¡genes */
 .galeria-port {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 }
 
-/* Estilos para las imágenes */
+/* Estilos para las imÃ¡genes */
 .imagen-port img {
     max-width: 100%;
     height: auto;
 }
 
-/* Estilos para la versión responsiva */
+/* Estilos para la versiÃ³n responsiva */
 @media screen and (max-width: 1024px) {
     .galeria-port {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:500px) {
+    .textos-header h1 {
+        font-size: 15px;
+        margin-left: 5px;
     }
 }
