@@ -272,4 +272,8 @@ footer p{
     .contenedor .contenido-textos {
         width: 95%;
     }
+
+    .titulo{
+        font-size: 15px;
+    }
 }
