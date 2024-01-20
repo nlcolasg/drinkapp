@@ -286,4 +286,19 @@ footer p{
     .titulo-final {
         margin-top: 20px;
     }
+    
+    .imagen-port {
+        width: 45%; /* Adjust the width to fit more images on smaller screens */
+        margin: 0 2.5%; /* Add some margin to create space between the images */
+        left: 0; /* Reset the left property */
+    }
+
+    .juegos {
+        justify-content: center; /* Center the flex container */
+    }
+
+    .hover-galeria {
+        width:99%;
+        height:74%
+    }
 }
