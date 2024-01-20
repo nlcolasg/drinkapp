@@ -49,7 +49,7 @@ nav .inicio > a, .hot > a, .vor > a, .ynn > a, .qda  > a {
     color: black;
     font-weight: 600;
     text-decoration: none;
-    display: inline-block;
+    display: block;
 }
 
 nav .inicio > a:hover, .hot > a:hover, .vor > a:hover, .ynn > a:hover, .qda  > a:hover {
