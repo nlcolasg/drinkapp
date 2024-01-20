@@ -31,6 +31,7 @@ nav {
     display: flex;
     justify-content: center;
     overflow:hidden;
+    flex-wrap: wrap;
 }
 nav .inicio, .hot, .vor, .ynn, .qda {
     font-size: 25px;
