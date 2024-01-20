@@ -156,3 +156,21 @@ input[type="submit"]{
 .recordar label:hover {
   color: #4a4a4a;
 }
+
+@media only screen and (max-width: 600px) {
+    .formulario {
+        padding: 5rem; /* Increased padding */
+        width: 100%; /* Full width on phone */
+    }
+
+    login-form .username,
+    login-form .password {
+        margin-bottom: 5rem; /* Increased margin */
+        font-size: 1.5rem; /* Larger font size */
+    }
+
+    input[type="submit"] {
+        margin-bottom: 4rem; /* Increased margin */
+        font-size: 1.5rem; /* Larger font size */
+    }
+}
