@@ -316,15 +316,20 @@ header {
 
 @media screen and (max-width:500px) {
 
-    nav .inicio, .hot, .vor, .qda, .ynn {
-        width: 50%;
-        text-align: center;
+   nav {
+        padding: 20px 0 0 0;
     }
 
-        nav .inicio > a, .hot > a, .vor > a, .qda > a, .ynn > a {
-            font-size: 10px;
-            justify-content: center;
+        nav .inicio, .hot, .vor, .ynn, .qda {
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            padding: 2px 10px;
+            border-radius: 5px;
         }
+
+            nav .inicio > a, .hot > a, .vor > a, .ynn > a, .qda > a {
+                font-size: 7px;
+            }
 
     .textos-header h1 {
         font-size: 40px;
