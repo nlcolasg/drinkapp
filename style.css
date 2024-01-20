@@ -245,37 +245,39 @@ footer p{
 }
 
 
-@media screen and (max-width:500px){
-    nav{
+
+@media screen and (max-width:500px) {
+
+    nav {
         text-align: center;
-        padding: 30px 0 0 0;
+        padding: 10px 0 0 0;
     }
 
-    nav > a{
-        margin-right: 5px;
+        nav > a {
+            margin-right: 5px;
+        }
+    header {
+        height: 200px;
+        background-size: 650px 375px;
     }
 
-    .textos-header h1{
-        font-size: 25px;
-        margin-left: 10px;
+    .textos-header h1 {
+        font-size: 15px;
+        margin-left: 5px;
+        height: 300px;
     }
 
-    .textos-header h2{
+    .textos-header h2 {
         font-size: 20px;
     }
 
-    .contenedor img{
+    .contenedor img {
         margin-bottom: 60px;
-        width:99%;
-
+        width: 99%;
     }
 
     .contenedor .contenido-textos {
         width: 95%;
-    }
-
-    .titulo{
-        font-size: 15px;
     }
 
     footer {
@@ -286,19 +288,22 @@ footer p{
     .titulo-final {
         margin-top: 20px;
     }
-    
+
     .imagen-port {
-        width: 45%; /* Adjust the width to fit more images on smaller screens */
-        margin: 0 2.5%; /* Add some margin to create space between the images */
-        left: 0; /* Reset the left property */
+        width: 80px; /* Adjust the width to fit more images on smaller screens */
+        height: 79.4px;
+        left: 33px; /* Reset the left property */
+        font-size: 50%;
+        position: center;
     }
 
     .juegos {
         justify-content: center; /* Center the flex container */
     }
-
-    .hover-galeria {
-        width:99%;
-        height:74%
+    .hover-galeria{
+        width: 79.5px;
+        height: 79px;
+        border-radius:5px;
     }
+
 }
