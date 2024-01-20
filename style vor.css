@@ -414,6 +414,7 @@ header {
     nav .inicio, .hot, .vor, .qda, .ynn {
         width: 50%;
         text-align: center;
+        flex-wrap:wrap;
     }
 
         nav .inicio > a, .hot > a, .vor > a, .qda > a, .ynn > a {
