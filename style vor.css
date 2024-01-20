@@ -429,15 +429,11 @@ header {
             border: 1px solid #ccc;
             padding: 2px 10px;
             border-radius: 5px;
-            text-align: center;
         }
 
             nav .inicio > a, .hot > a, .vor > a, .ynn > a, .qda > a {
                 font-size: 7px;
-                color: black;
-                display: block;
             }
-
     .textos-header h1 {
         font-size: 40px;
     }
