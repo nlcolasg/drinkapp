@@ -76,7 +76,7 @@ header .textos-header {
 
 @media screen and (max-width:500px) {
     .textos-header h1 {
-        font-size: 15px;
+        font-size: 20px;
         margin-left: 5px;
     }
 }
