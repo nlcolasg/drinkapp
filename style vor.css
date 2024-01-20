@@ -290,6 +290,7 @@ header {
 
     .button-section {
         background-size: cover;
+        flex-direction:column;
     }
 
     .textos-header h1 {
@@ -357,6 +358,7 @@ header {
 
     .button-section {
         background-size: cover;
+        flex-direction:column;
     }
 
     .textos-header h1 {
@@ -429,6 +431,7 @@ header {
 
     .button-section {
         background-size: cover;
+        flex-direction:column;
     }
 
     .button1 {
