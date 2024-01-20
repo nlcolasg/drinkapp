@@ -31,6 +31,21 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved "remember password" state on page load
+            window.onload = function () {
+                if (localStorage.recordarPassword === 'true') {
+                    document.getElementById('recordar-password').checked = true;
+                }
+            };
+
+            // Handle checkbox state changes
+            document.getElementById('recordar-password').addEventListener('change', function () {
+                if (this.checked) {
+                    localStorage.recordarPassword = 'true';
+                } else {
+                    localStorage.recordarPassword = 'false';
+                }
+            });
             var password = localStorage.getItem('password');
             if (password) {
                 document.getElementById('password').value = password;
